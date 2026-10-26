@@ -1,0 +1,6 @@
+$ git remote set-url origin git@github.com-personal:hammuneer/dice-assignment1-part2-docker-commands.git
+
+$ git push -u origin main
+To github.com-personal:hammuneer/dice-assignment1-part2-docker-commands.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.

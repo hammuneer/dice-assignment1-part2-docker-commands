@@ -1,0 +1,2 @@
+$ gh repo create hammuneer/dice-assignment1-part2-docker-commands --public --description "DICE Assignment 1 Part 2: Docker container commands" --source . --remote origin
+https://github.com/hammuneer/dice-assignment1-part2-docker-commands

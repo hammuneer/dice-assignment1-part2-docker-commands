@@ -1059,6 +1059,45 @@ git push -u origin main
 (the same setup as in Part 1, Step 8.2), and `git push -u` uploads the `main` branch and sets it
 to track `origin/main`.
 
+**Output:** ([logs/23-git-commit.log](logs/23-git-commit.log), [logs/24-gh-repo-create.log](logs/24-gh-repo-create.log), [logs/25-git-push.log](logs/25-git-push.log))
+
+```
+$ gh repo create hammuneer/dice-assignment1-part2-docker-commands --public ... --source . --remote origin
+https://github.com/hammuneer/dice-assignment1-part2-docker-commands
+
+$ git push -u origin main
+To github.com-personal:hammuneer/dice-assignment1-part2-docker-commands.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+```
+
+### Verify the codebase on GitHub
+
+**Commands:**
+
+```bash
+gh repo view hammuneer/dice-assignment1-part2-docker-commands --json name,visibility,url,defaultBranchRef,description
+gh api repos/hammuneer/dice-assignment1-part2-docker-commands/contents --jq '.[].name'
+```
+
+**Description:** Asks the GitHub API for the repository's details and for the list of files on
+the `main` branch, to confirm that the push worked and the repository is public.
+
+**Output:** ([logs/26-gh-repo-view.log](logs/26-gh-repo-view.log))
+
+```
+{"defaultBranchRef":{"name":"main"},"description":"DICE Assignment 1 Part 2: Docker container commands","name":"dice-assignment1-part2-docker-commands","url":"https://github.com/hammuneer/dice-assignment1-part2-docker-commands","visibility":"PUBLIC"}
+
+.dockerignore
+.gitignore
+Dockerfile
+README.md
+backend
+frontend
+host-files
+logs
+```
+
 ---
 
 ## Command reference
