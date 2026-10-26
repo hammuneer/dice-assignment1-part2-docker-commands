@@ -1,0 +1,24 @@
+$ docker commit -a 'Hamza Munir' -m 'Add exec-note.txt and from-host.txt' dice-app2 hammuneer/dice-docker-demo:1.0.0-committed
+sha256:62dd0535f713341ff79522623acf7323833b057aacef03d4512977886033dad4
+[exit code: 0]
+
+$ docker image ls hammuneer/dice-docker-demo
+WARNING: This output is designed for human readability. For machine-readable output, please use --format.
+IMAGE                                        ID             DISK USAGE   CONTENT SIZE   EXTRA
+hammuneer/dice-docker-demo:1.0.0             ca7698b98dca        250MB         59.4MB   U    
+hammuneer/dice-docker-demo:1.0.0-committed   62dd0535f713        250MB         59.4MB        
+[exit code: 0]
+
+$ docker history hammuneer/dice-docker-demo:1.0.0-committed | head -4
+IMAGE          CREATED                  CREATED BY                                      SIZE      COMMENT
+62dd0535f713   Less than a second ago   uvicorn main:app --host 0.0.0.0 --port 8000     20.5kB    Add exec-note.txt and from-host.txt
+ca7698b98dca   42 minutes ago           CMD ["uvicorn" "main:app" "--host" "0.0.0.0"…   0B        buildkit.dockerfile.v0
+<missing>      42 minutes ago           HEALTHCHECK {Test:[CMD-SHELL python -c "impo…   0B        buildkit.dockerfile.v0
+[exit code: 0]
+
+$ docker run --rm hammuneer/dice-docker-demo:1.0.0-committed sh -c 'cat /app/exec-note.txt /tmp/from-host.txt'
+Created by docker exec on Mon Oct 26 21:55:11 UTC 2026
+Hello from the host machine!
+This file was copied into the container with docker cp.
+[exit code: 0]
+

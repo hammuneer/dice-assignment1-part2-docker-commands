@@ -1,0 +1,18 @@
+$ docker run -di --name dice-shell hammuneer/dice-docker-demo:1.0.0 sh
+194b22278ad3a84bf329df4e77561ea81c3b31257a466ce2ca8b70b48a6188f8
+[exit code: 0]
+
+$ docker ps --filter name=dice-shell --format '{{.Names}}: {{.Status}}'
+dice-shell: Up Less than a second (health: starting)
+[exit code: 0]
+
+$ sh host-files/attach-commands.sh | docker attach dice-shell
+stdout: hello from 194b22278ad3 as appuser
+stderr: this line is written to stderr
+Sum of 1..10 = 55
+[exit code: 7]
+
+$ docker ps -a --filter name=dice-shell --format '{{.Names}}: {{.Status}}'
+dice-shell: Exited (7) 1 second ago
+[exit code: 0]
+

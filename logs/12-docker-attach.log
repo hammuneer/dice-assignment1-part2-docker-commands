@@ -1,0 +1,13 @@
+$ docker attach --no-stdin --sig-proxy=false dice-app2
+INFO:     172.29.0.1:61722 - "GET /api/hello?name=Alice HTTP/1.1" 200 OK
+INFO:     172.29.0.1:41972 - "GET /api/hello?name=Bob HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55010 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46248 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42422 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54112 - "GET /api/health HTTP/1.1" 200 OK
+(attach session ended from the host; container keeps running because --sig-proxy=false)
+
+$ docker ps --filter name=dice-app2 --format '{{.Names}}: {{.Status}}'
+dice-app2: Up 2 minutes (healthy)
+[exit code: 0]
+

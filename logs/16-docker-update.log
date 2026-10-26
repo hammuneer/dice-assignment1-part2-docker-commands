@@ -1,0 +1,13 @@
+$ docker update --cpus 0.5 --memory 256m --memory-swap 512m --restart unless-stopped dice-web
+dice-web
+[exit code: 0]
+
+$ docker inspect --format 'Memory={{.HostConfig.Memory}} MemorySwap={{.HostConfig.MemorySwap}} NanoCpus={{.HostConfig.NanoCpus}} Restart={{.HostConfig.RestartPolicy.Name}}' dice-web
+Memory=268435456 MemorySwap=536870912 NanoCpus=500000000 Restart=unless-stopped
+[exit code: 0]
+
+$ docker stats --no-stream dice-web
+CONTAINER ID   NAME       CPU %     MEM USAGE / LIMIT   MEM %     NET I/O           BLOCK I/O    PIDS
+acff99c2d91d   dice-web   0.16%     35.23MiB / 256MiB   13.76%    5.46kB / 4.76kB   0B / 4.1kB   6
+[exit code: 0]
+

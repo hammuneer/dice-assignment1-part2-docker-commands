@@ -1,0 +1,5 @@
+$ docker stats --no-stream dice-app2
+CONTAINER ID   NAME        CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O   PIDS
+acff99c2d91d   dice-app2   0.16%     35.25MiB / 7.653GiB   0.45%     3.35kB / 2.86kB   0B / 0B     6
+[exit code: 0]
+

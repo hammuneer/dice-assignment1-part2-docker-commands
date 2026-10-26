@@ -1,0 +1,13 @@
+$ docker stop dice-web
+dice-web
+[exit code: 0]
+
+$ docker ps --filter name=dice-web
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[exit code: 0]
+
+$ docker ps -a --filter name=dice-web --format 'table {{.ID}}	{{.Names}}	{{.Status}}'
+CONTAINER ID   NAMES      STATUS
+acff99c2d91d   dice-web   Exited (0) Less than a second ago
+[exit code: 0]
+

@@ -1,0 +1,32 @@
+$ docker inspect --format 'Name: {{.Name}}
+ID: {{.Id}}
+Image: {{.Config.Image}}
+State: {{.State.Status}} (Running={{.State.Running}}, Pid={{.State.Pid}})
+Health: {{.State.Health.Status}}
+StartedAt: {{.State.StartedAt}}
+Cmd: {{json .Config.Cmd}}
+WorkingDir: {{.Config.WorkingDir}}
+User: {{.Config.User}}
+Env: {{json .Config.Env}}
+Networks: {{range $k, $v := .NetworkSettings.Networks}}{{$k}} (IP {{$v.IPAddress}}) {{end}}
+Ports: {{json .NetworkSettings.Ports}}
+RestartPolicy: {{.HostConfig.RestartPolicy.Name}}
+Memory limit: {{.HostConfig.Memory}}
+NanoCpus: {{.HostConfig.NanoCpus}}' dice-app2
+Name: /dice-app2
+ID: acff99c2d91d64faa015022bd7b92a7782117a2ba049fd4195e70c8b472472bc
+Image: hammuneer/dice-docker-demo:1.0.0
+State: running (Running=true, Pid=3697)
+Health: healthy
+StartedAt: 2026-10-26T21:54:54.536429542Z
+Cmd: ["uvicorn","main:app","--host","0.0.0.0","--port","8000"]
+WorkingDir: /app
+User: appuser
+Env: ["PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin","LANG=C.UTF-8","GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305","PYTHON_VERSION=3.12.15","PYTHON_SHA256=c2c4321961fab0fb999d66e0cecf521c2ab3994c7992873ea99e306c1094fd5a","PYTHONDONTWRITEBYTECODE=1","PYTHONUNBUFFERED=1","PIP_NO_CACHE_DIR=1","PIP_ROOT_USER_ACTION=ignore","APP_VERSION=1.0.0"]
+Networks: bridge (IP 172.17.0.2) 
+Ports: {"8000/tcp":[{"HostIp":"0.0.0.0","HostPort":"8080"},{"HostIp":"::","HostPort":"8080"}]}
+RestartPolicy: no
+Memory limit: 0
+NanoCpus: 0
+[exit code: 0]
+

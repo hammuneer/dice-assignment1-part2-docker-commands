@@ -1,0 +1,27 @@
+$ docker ps -a --filter name=dice- --format 'table {{.ID}}	{{.Names}}	{{.Status}}'
+CONTAINER ID   NAMES        STATUS
+c0dcb171578e   dice-wait    Exited (3) 5 seconds ago
+194b22278ad3   dice-shell   Exited (7) 11 seconds ago
+acff99c2d91d   dice-web     Up 51 seconds (healthy)
+341ef0c58a75   dice-app     Exited (0) 6 minutes ago
+[exit code: 0]
+
+$ docker rm dice-web
+Error response from daemon: cannot remove container "dice-web": container is running: stop the container before removing or force remove
+[exit code: 1]
+
+$ docker stop dice-web
+dice-web
+[exit code: 0]
+
+$ docker rm dice-web dice-shell dice-wait
+dice-web
+dice-shell
+dice-wait
+[exit code: 0]
+
+$ docker ps -a --filter name=dice- --format 'table {{.ID}}	{{.Names}}	{{.Status}}'
+CONTAINER ID   NAMES      STATUS
+341ef0c58a75   dice-app   Exited (0) 6 minutes ago
+[exit code: 0]
+

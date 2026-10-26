@@ -1,0 +1,12 @@
+$ docker unpause dice-app2
+dice-app2
+[exit code: 0]
+
+$ docker ps --filter name=dice-app2 --format '{{.Names}}: {{.Status}}'
+dice-app2: Up 3 minutes (unhealthy)
+[exit code: 0]
+
+$ curl -s -m 3 http://localhost:8080/api/health; echo
+{"status":"ok"}
+[exit code: 0]
+

@@ -1,0 +1,27 @@
+$ docker restart dice-web
+dice-web
+[exit code: 0]
+
+$ docker ps --filter name=dice-web --format '{{.Names}}: {{.Status}}'
+dice-web: Up 3 seconds (health: starting)
+[exit code: 0]
+
+$ docker inspect --format 'StartedAt={{.State.StartedAt}} RestartCount={{.RestartCount}}' dice-web
+StartedAt=2026-10-26T21:58:00.5928008Z RestartCount=0
+[exit code: 0]
+
+$ docker logs --tail 8 dice-web
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1]
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[exit code: 0]
+
+$ docker exec dice-web ls /tmp
+from-host.txt
+[exit code: 0]
+

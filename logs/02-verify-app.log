@@ -1,0 +1,28 @@
+$ curl -s http://localhost:8080/api/health; echo
+{"status":"ok"}
+[exit code: 0]
+
+$ curl -s 'http://localhost:8080/api/hello?name=Hamza'; echo
+{"message":"Hello, Hamza! This response comes from FastAPI inside Docker."}
+[exit code: 0]
+
+$ curl -s http://localhost:8080/api/info; echo
+{"app_version":"1.0.0","hostname":"acff99c2d91d","python_version":"3.12.15","platform":"Linux-6.12.72-linuxkit-x86_64-with-glibc2.41","server_time":"2026-10-26T21:54:58.790119+00:00"}
+[exit code: 0]
+
+$ curl -s http://localhost:8080/ | head -15
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Docker Demo</title>
+    <script type="module" crossorigin src="/assets/index-BPRgs4Ta.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BKnbo-Yx.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+[exit code: 0]
+

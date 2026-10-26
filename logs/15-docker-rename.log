@@ -1,0 +1,8 @@
+$ docker rename dice-app2 dice-web
+[exit code: 0]
+
+$ docker ps --filter id=acff99c2d91d --format 'table {{.ID}}	{{.Names}}	{{.Status}}'
+CONTAINER ID   NAMES      STATUS
+acff99c2d91d   dice-web   Up 3 minutes (unhealthy)
+[exit code: 0]
+

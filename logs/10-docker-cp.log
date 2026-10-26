@@ -1,0 +1,29 @@
+$ cat host-files/from-host.txt
+Hello from the host machine!
+This file was copied into the container with docker cp.
+[exit code: 0]
+
+$ docker cp host-files/from-host.txt dice-app2:/tmp/from-host.txt
+[exit code: 0]
+
+$ docker exec dice-app2 cat /tmp/from-host.txt
+Hello from the host machine!
+This file was copied into the container with docker cp.
+[exit code: 0]
+
+$ docker cp dice-app2:/app/main.py host-files/main-from-container.py
+[exit code: 0]
+
+$ docker cp dice-app2:/app/exec-note.txt host-files/exec-note.txt
+[exit code: 0]
+
+$ ls -la host-files && cat host-files/exec-note.txt
+total 24
+drwxr-xr-x@ 5 apple  staff   160 Oct 27 02:55 .
+drwxr-xr-x@ 9 apple  staff   288 Oct 27 02:54 ..
+-rw-r--r--@ 1 apple  staff    55 Oct 27 02:55 exec-note.txt
+-rw-r--r--@ 1 apple  staff    85 Oct 27 02:55 from-host.txt
+-rw-r--r--@ 1 apple  staff  1093 Oct 27 01:48 main-from-container.py
+Created by docker exec on Mon Oct 26 21:55:11 UTC 2026
+[exit code: 0]
+

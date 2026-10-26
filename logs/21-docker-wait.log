@@ -1,0 +1,18 @@
+$ docker run -d --name dice-wait hammuneer/dice-docker-demo:1.0.0 sh -c 'echo working...; sleep 5; echo done; exit 3'
+c0dcb171578ef1e9680c62c2654e2151621573a28d78f18b51894a041463009f
+[exit code: 0]
+
+$ time docker wait dice-wait
+3
+  0.03s user 0.02s system 0% cpu 5.169 total
+[exit code: 0]
+
+$ docker logs dice-wait
+working...
+done
+[exit code: 0]
+
+$ docker wait dice-shell
+7
+[exit code: 0]
+

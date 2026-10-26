@@ -1,0 +1,13 @@
+$ docker start dice-web
+dice-web
+[exit code: 0]
+
+$ docker ps --filter name=dice-web --format 'table {{.ID}}	{{.Names}}	{{.Status}}	{{.Ports}}'
+CONTAINER ID   NAMES      STATUS                            PORTS
+acff99c2d91d   dice-web   Up 3 seconds (health: starting)   0.0.0.0:8080->8000/tcp, [::]:8080->8000/tcp
+[exit code: 0]
+
+$ curl -s http://localhost:8080/api/health; echo
+{"status":"ok"}
+[exit code: 0]
+

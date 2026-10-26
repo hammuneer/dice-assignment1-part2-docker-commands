@@ -1,0 +1,2 @@
+Hello from the host machine!
+This file was copied into the container with docker cp.

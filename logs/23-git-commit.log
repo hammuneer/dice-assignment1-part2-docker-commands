@@ -1,0 +1,47 @@
+$ git commit -m 'Assignment 1 Part 2: Docker container commands'
+[main (root-commit) e02b886] Assignment 1 Part 2: Docker container commands
+ 42 files changed, 3814 insertions(+)
+ create mode 100644 .dockerignore
+ create mode 100644 .gitignore
+ create mode 100644 Dockerfile
+ create mode 100644 README.md
+ create mode 100644 backend/main.py
+ create mode 100644 backend/requirements.txt
+ create mode 100644 frontend/index.html
+ create mode 100644 frontend/package-lock.json
+ create mode 100644 frontend/package.json
+ create mode 100644 frontend/src/App.css
+ create mode 100644 frontend/src/App.jsx
+ create mode 100644 frontend/src/main.jsx
+ create mode 100644 frontend/vite.config.js
+ create mode 100644 host-files/attach-commands.sh
+ create mode 100644 host-files/exec-note.txt
+ create mode 100644 host-files/from-host.txt
+ create mode 100644 host-files/main-from-container.py
+ create mode 100644 logs/01-docker-images.log
+ create mode 100644 logs/01-docker-pull.log
+ create mode 100644 logs/02-docker-run.log
+ create mode 100644 logs/02-verify-app.log
+ create mode 100644 logs/03-docker-ps.log
+ create mode 100644 logs/04-docker-logs.log
+ create mode 100644 logs/05-docker-inspect-full.json
+ create mode 100644 logs/05-docker-inspect.log
+ create mode 100644 logs/06-docker-exec.log
+ create mode 100644 logs/07-docker-top.log
+ create mode 100644 logs/08-docker-stats.log
+ create mode 100644 logs/09-docker-port.log
+ create mode 100644 logs/10-docker-cp.log
+ create mode 100644 logs/11-docker-commit.log
+ create mode 100644 logs/12-docker-attach.log
+ create mode 100644 logs/13-docker-pause.log
+ create mode 100644 logs/14-docker-unpause.log
+ create mode 100644 logs/15-docker-rename.log
+ create mode 100644 logs/16-docker-update.log
+ create mode 100644 logs/17-docker-restart.log
+ create mode 100644 logs/18-docker-stop.log
+ create mode 100644 logs/19-docker-start.log
+ create mode 100644 logs/20-docker-attach-stdio.log
+ create mode 100644 logs/21-docker-wait.log
+ create mode 100644 logs/22-docker-rm.log
+[exit code: 0]
+

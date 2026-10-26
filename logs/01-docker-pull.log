@@ -1,0 +1,7 @@
+$ docker pull hammuneer/dice-docker-demo:1.0.0
+1.0.0: Pulling from hammuneer/dice-docker-demo
+Digest: sha256:ca7698b98dcae4515e9248f47f4b84d9c0776c3dc3707e1e4e6c2a7d280b7e4d
+Status: Image is up to date for hammuneer/dice-docker-demo:1.0.0
+docker.io/hammuneer/dice-docker-demo:1.0.0
+[exit code: 0]
+

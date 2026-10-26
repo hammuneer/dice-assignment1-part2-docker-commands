@@ -1,0 +1,10 @@
+$ docker ps
+CONTAINER ID   IMAGE                              COMMAND                  CREATED          STATUS                    PORTS                                         NAMES
+acff99c2d91d   hammuneer/dice-docker-demo:1.0.0   "uvicorn main:app --…"   16 seconds ago   Up 15 seconds (healthy)   0.0.0.0:8080->8000/tcp, [::]:8080->8000/tcp   dice-app2
+[exit code: 0]
+
+$ docker ps --filter name=dice-app2 --format 'table {{.ID}}	{{.Names}}	{{.Status}}	{{.Ports}}'
+CONTAINER ID   NAMES       STATUS                    PORTS
+acff99c2d91d   dice-app2   Up 15 seconds (healthy)   0.0.0.0:8080->8000/tcp, [::]:8080->8000/tcp
+[exit code: 0]
+

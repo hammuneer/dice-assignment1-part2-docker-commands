@@ -1,0 +1,4 @@
+$ docker run -d --name dice-app2 -p 8080:8000 hammuneer/dice-docker-demo:1.0.0
+acff99c2d91d64faa015022bd7b92a7782117a2ba049fd4195e70c8b472472bc
+[exit code: 0]
+
